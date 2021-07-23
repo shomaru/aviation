@@ -26,7 +26,7 @@ public class Flight
     public ArrayList<JSONObject> getFlightData() throws IOException, InterruptedException, URISyntaxException {
         HttpClient client = HttpClient.newHttpClient();
         URI uri = new URIBuilder("https://api.airsafe.spire.com/v2/targets/history").addParameter("start", this.targetUpdate.getString("departure_scheduled_time")).addParameter("end", this.targetUpdate.getString("arrival_scheduled_time")).addParameter("icao_address", this.targetUpdate.getString("icao_address")).build();
-        HttpRequest request = HttpRequest.newBuilder().uri(uri).header("Authorization", "Bearer <your_token>").build();
+        HttpRequest request = HttpRequest.newBuilder().uri(uri).header("Authorization", "Bearer rYWtOAD39fcF7V9JHaJ99n9RqMvSKyOo").build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         ArrayList<JSONObject> flightPath = new ArrayList<JSONObject>();
         response.body().lines().forEach(line -> {

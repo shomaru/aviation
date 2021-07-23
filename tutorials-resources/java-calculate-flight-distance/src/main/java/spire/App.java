@@ -19,7 +19,7 @@ class App
                 .addParameter("start", "2021-04-20T12:00:00Z").addParameter("end", "2021-04-20T18:30:00Z")
                 .addParameter("longitude_between", "2.481443,2.642431")
                 .addParameter("latitude_between", "48.970752,49.041694").build();
-        HttpRequest request = HttpRequest.newBuilder().uri(uri).header("Authorization", "Bearer <your_token>").build();
+        HttpRequest request = HttpRequest.newBuilder().uri(uri).header("Authorization", "Bearer rYWtOAD39fcF7V9JHaJ99n9RqMvSKyOo").build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Optional<String> test = response.body().lines().filter(line -> {
             JSONObject obj = new JSONObject(line);
